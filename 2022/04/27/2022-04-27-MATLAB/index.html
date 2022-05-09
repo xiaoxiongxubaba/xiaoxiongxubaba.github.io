@@ -6,19 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xiaoxiongxubaba.github.io">
-  <title>分类 | 小凶许霸霸</title>
+  <title>ifanbean | 小凶许霸霸</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://xiaoxiongxubaba.github.io/categories/index.html">
+  <meta name="description" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ifanbean">
+<meta property="og:url" content="https://xiaoxiongxubaba.github.io/2022/04/27/2022-04-27-MATLAB/index.html">
 <meta property="og:site_name" content="小凶许霸霸">
+<meta property="og:description" content="MATLAB">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-17T03:22:07.000Z">
-<meta property="article:modified_time" content="2022-04-17T03:33:21.480Z">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5C%E5%8E%9F%E5%9B%BE.png">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5C%E7%81%B0%E5%BA%A6%E5%9B%BE.png">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5C%E8%BE%B9%E7%BC%98%E5%9B%BE.png">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5Cradon.png">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5Ciradon.png">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5Cfanbean.png">
+<meta property="og:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5Cifanbean.png">
+<meta property="article:published_time" content="2022-04-26T16:15:12.000Z">
+<meta property="article:modified_time" content="2022-04-26T17:52:51.533Z">
 <meta property="article:author" content="xiaoxiongxu">
+<meta property="article:tag" content="MATLAB">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaoxiongxubaba.github.io/ifanbean%5C%E5%8E%9F%E5%9B%BE.png">
   
     <link rel="alternative" href="/atom.xml" title="小凶许霸霸" type="application/atom+xml">
   
@@ -209,14 +220,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="categories-" class="article article-type-categories " itemscope itemprop="blogPost">
+            <article id="post-2022-04-27-MATLAB" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      分类
+      ifanbean
     </h1>
   
 
@@ -228,8 +239,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/categories/index.html" class="archive-article-date">
-        <time datetime="2022-04-17T03:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-17</time>
+<a href="/2022/04/27/2022-04-27-MATLAB/" class="archive-article-date">
+        <time datetime="2022-04-26T16:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
 </a>
 
   
@@ -242,7 +253,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">293字</span>
     </span>
   </span>
 
@@ -262,7 +273,29 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h1><span id="more"></span>
+<h3 id="radon"><a href="#radon" class="headerlink" title="radon"></a>radon</h3><h3 id="imread"><a href="#imread" class="headerlink" title="imread"></a>imread</h3><blockquote>
+<p>读取名为filename的图像</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srcImage = imread(filename)</span><br></pre></td></tr></table></figure>
+
+<h3 id="rgb2gray"><a href="#rgb2gray" class="headerlink" title="rgb2gray"></a>rgb2gray</h3><blockquote>
+<p>将RGB图或彩色图转化为灰度图</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grayImage=rgb2gray(srcImage)</span><br></pre></td></tr></table></figure>
+<h3 id="edge"><a href="#edge" class="headerlink" title="edge"></a>edge</h3><blockquote>
+<p>采用灰度或一个二值化图像I作为它的输入，并返回一个与I相同大小的二值化图像BW，在函数检测到边缘的地方为1，其他地方为0。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cannyImage=edge(grayImage)</span><br></pre></td></tr></table></figure>
+
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>filename &#x3D; input()</p>
+<h3 id="figure"><a href="#figure" class="headerlink" title="figure"></a>figure</h3><blockquote>
+<p>创建窗口</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">figure();</span><br><span class="line"></span><br><span class="line">figure(&#x27;name&#x27;, &#x27;hello&#x27;);</span><br><span class="line"></span><br><span class="line">figure(&#x27;name&#x27;, &#x27;hello&#x27;,&#x27;numbertitle&#x27;,&#x27;off&#x27;);</span><br><span class="line"></span><br><span class="line">figure(&#x27;name&#x27;, &#x27;hello&#x27;,&#x27;numbertitle&#x27;,&#x27;off&#x27;,&#x27;position&#x27;,[100,100,400,200]);</span><br></pre></td></tr></table></figure>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">fileName=input(&#x27;Input image file name:&#x27;);   %%输入图片路径(用引号括起来)</span><br><span class="line"></span><br><span class="line">srcImage=imread(fileName);</span><br><span class="line">figure(&quot;Name&quot;,&quot;原图&quot;)</span><br><span class="line">imshow(srcImage)</span><br><span class="line"></span><br><span class="line">grayImage=rgb2gray(srcImage);</span><br><span class="line">figure(&quot;Name&quot;,&quot;灰度图&quot;)</span><br><span class="line">imshow(grayImage)</span><br><span class="line"></span><br><span class="line">cannyImage=edge(grayImage);</span><br><span class="line">figure(&quot;Name&quot;,&quot;边缘图&quot;)</span><br><span class="line">imshow(cannyImage)</span><br><span class="line"></span><br><span class="line">theta=0:180;</span><br><span class="line">[R,x]=radon(cannyImage,0:180);</span><br><span class="line">figure,imagesc(theta,x,R); </span><br><span class="line">title(&#x27;Radon变换&#x27;); </span><br><span class="line">xlabel(&#x27;theta(degree)&#x27;); </span><br><span class="line">ylabel(&#x27;X\prime&#x27;); </span><br><span class="line">colormap(hot);  </span><br><span class="line">colorbar;</span><br><span class="line"></span><br><span class="line">figure(&quot;Name&quot;,&quot;iradon&quot;)</span><br><span class="line">I = iradon(R, theta)</span><br><span class="line">subplot(121)</span><br><span class="line">imshow(I)</span><br><span class="line"></span><br><span class="line">theta2=350;</span><br><span class="line">[R2,x]=fanbeam(cannyImage,theta2);</span><br><span class="line">figure,imagesc(theta,x,R2); </span><br><span class="line">title(&#x27;fanbean变换&#x27;); </span><br><span class="line">xlabel(&#x27;theta(degree)&#x27;); </span><br><span class="line">ylabel(&#x27;X\prime&#x27;); </span><br><span class="line">colormap(hot);  </span><br><span class="line">colorbar;</span><br><span class="line"></span><br><span class="line">figure(&quot;Name&quot;,&quot;ifanbean&quot;)</span><br><span class="line">I2 = ifanbeam(R2,theta2)</span><br><span class="line">imshow(I2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/ifanbean%5C%E5%8E%9F%E5%9B%BE.png" alt="1"><br><img src="/ifanbean%5C%E7%81%B0%E5%BA%A6%E5%9B%BE.png" alt="2"><br><img src="/ifanbean%5C%E8%BE%B9%E7%BC%98%E5%9B%BE.png" alt="3"><br><img src="/ifanbean%5Cradon.png" alt="4"><br><img src="/ifanbean%5Ciradon.png" alt="5"><br><img src="/ifanbean%5Cfanbean.png" alt="6"><br><img src="/ifanbean%5Cifanbean.png" alt="7"></p>
+
     
 
     
@@ -308,7 +341,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://xiaoxiongxubaba.github.io/categories/index.html" title="分类" target="_blank">https://xiaoxiongxubaba.github.io/categories/index.html</a>
+          <a href="https://xiaoxiongxubaba.github.io/2022/04/27/2022-04-27-MATLAB/" title="ifanbean" target="_blank">https://xiaoxiongxubaba.github.io/2022/04/27/2022-04-27-MATLAB/</a>
         </li>
         
         <li>
@@ -325,7 +358,29 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MATLAB</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MATLAB//" class="article-tag-list-link color2">MATLAB</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -375,7 +430,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://xiaoxiongxubaba.github.io/categories/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://xiaoxiongxubaba.github.io/2022/04/27/2022-04-27-MATLAB/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -404,6 +459,16 @@
         
     </div>
 </aside>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -446,7 +511,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
