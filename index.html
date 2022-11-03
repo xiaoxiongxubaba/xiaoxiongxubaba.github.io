@@ -240,6 +240,113 @@
             
 
   
+    <article id="post-mob短信验证/Mob短信验证" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/11/03/mob%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81/Mob%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81/" target="_blank">Mob短信验证</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/11/03/mob%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81/Mob%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81/" class="archive-article-date">
+        <time datetime="2022-11-03T01:21:53.369Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="Mob平台注册"><a href="#Mob平台注册" class="headerlink" title="Mob平台注册"></a>Mob平台注册</h2><ol>
+<li>打开官网 <a target="_blank" rel="noopener" href="https://www.mob.com/">https://www.mob.com/</a></li>
+<li>开发者服务 -&gt; 短信验证 -&gt; 创建应用(点击创建的应用，有个appKey和appSecret)</li>
+<li>下载SDK(下载提示中提示 代码在线安装)<h2 id="在AndroidStudio中配置"><a href="#在AndroidStudio中配置" class="headerlink" title="在AndroidStudio中配置"></a>在AndroidStudio中配置</h2><h3 id="Gradle-Scripts中配置"><a href="#Gradle-Scripts中配置" class="headerlink" title="Gradle Scripts中配置"></a>Gradle Scripts中配置</h3></li>
+<li>build.gradle(Project) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        // 添加Mob Maven地址</span><br><span class="line">        maven &#123;url &quot;https://mvn.mob.com/android&quot;&#125;       //注意不能写成&quot;http://mvn.mob.com/android&quot;,要加上s否则报错</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dependencies &#123;</span><br><span class="line">        // 注册MobSDK</span><br><span class="line">        classpath &quot;com.mob.sdk:MobSDK:+&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>build.gradle(Module  app)</li>
+</ol>
+<p>在plugins中加上<code>id &#39;com.mob.sdk&#39;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id &#x27;com.android.application&#x27;</span><br><span class="line">    id &#x27;com.mob.sdk&#x27; //添加内容</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>再添加申请的密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MobSDK &#123;</span><br><span class="line">    appKey &quot;替换为mob创建应用时给的appKey &quot;</span><br><span class="line">    appSecret &quot; 替换为mob创建应用时给的appSecret&quot;</span><br><span class="line">    SMSSDK &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>settings.gradle</p>
+<p>因为新版中<code>settings.gradle</code>配置中默认设置依赖模式为<code>FAIL_ON_PROJECT_REPOS</code>，导致直接或通过插件直接声明的任何存储库都将触发构建错误，故我们将其替换成；<code>repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)</code></p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   dependencyResolutionManagement &#123;</span><br><span class="line">    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)</span><br><span class="line">    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)  //这一行为修改内容</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">        maven &#123; allowInsecureProtocol = true</span><br><span class="line">        url &quot;https://mvn.mob.com/android&quot;&#125;      //这两行为添加内容</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><p>gradle.properties</p>
+<p>添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MobSDK.spEdition=FP</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="manifests-x2F-AndroidManifest-xml配置"><a href="#manifests-x2F-AndroidManifest-xml配置" class="headerlink" title="manifests&#x2F;AndroidManifest.xml配置"></a>manifests&#x2F;AndroidManifest.xml配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 连接网络权限，用于执行云端语音能力 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt; &lt;!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.RECORD_AUDIO&quot; /&gt; &lt;!-- 读取网络信息状态 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt; &lt;!-- 获取当前wifi状态 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt; &lt;!-- 允许程序改变网络连接状态 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.CHANGE_NETWORK_STATE&quot; /&gt; &lt;!-- 读取手机信息权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot; /&gt; &lt;!-- 读取联系人权限，上传联系人需要用到此权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot; /&gt; &lt;!-- 外存储写权限，构建语法需要用到此权限 --&gt;</span><br><span class="line">&lt;uses-permission</span><br><span class="line">    android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span><br><span class="line">    tools:ignore=&quot;CoarseFineLocation&quot; /&gt; &lt;!-- 外存储读权限，构建语法需要用到此权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt; &lt;!-- 手机定位信息，用来为语义等功能提供定位，提供更精准的服务 --&gt;</span><br><span class="line">&lt;!-- 定位信息是敏感信息，可通过Setting.setLocationEnable(false)关闭定位请求 --&gt;</span><br><span class="line">&lt;uses-permission</span><br><span class="line">    android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span><br><span class="line">    tools:ignore=&quot;CoarseFineLocation&quot; /&gt; &lt;!-- 如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 --&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AndroidStudio</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/11/03/mob%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81/Mob%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MATLAB/MATLAB" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -483,6 +590,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
